@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="user-info">
+        <h2>MEMORY GAME</h2>
+        <label for="username">Enter username</label>
+        <input type="text" name="username" id="username">
+        <p id="inp-invalid" class="hidden">please enter valid username</p>
+        <div>
+            <label for="lako"><input type="radio" name="dificulty-level" id="lako" value="16">lako</label>
+            <label for="srednje"><input type="radio" name="dificulty-level" id="srednje" value="36">srednje</label>
+            <label for="tesko"><input type="radio" name="dificulty-level" id="tesko" value="64">tesko</label>
+            <label for="ekspert"><input type="radio" name="dificulty-level" id="ekspert" value="100">ekspert</label>
+        </div>
+        <button id="start-game">start</button>
+
+       
+    </div>
+
+    <div id="timer-clock">
+        <p>TIME</p>
+        <div id="timer">
+            0
+        </div>
+    </div>
+
+
+    <div class="block">
+        <div class="game-cotainer">
+            <section id="game-bord"></section>
+        </div>
+        <div class="score-container">
+            <div class="score-bord">
+                <button class="score-bord-btn" id="16">lako</button>
+                <button class="score-bord-btn" id="36">srednje</button>
+                <button class="score-bord-btn" id="64">tesko</button>
+                <button class="score-bord-btn" id="100">ekspert</button>
+                <div class="score-table"></div>
+            </div>
+        </div>
+       
+    </div>
+
+    <div id="game-won" class="hidden" >
+        <p>
+            You Won
+        </p>
+        <div id="button-div">
+            <button class="game-won-btn" id="new-game-btn">new game</button>
+            <button class="game-won-btn" id="see-result-btn">see results</button>
+            <button class="game-won-btn" id="restart-btn">restart</button>
+        </div>
+    </div>
+    <script src="main.js" type="module"></script>
+</body>
+</html>

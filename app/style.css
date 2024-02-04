@@ -1,0 +1,290 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap');
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto Mono', monospace;
+    
+}
+body{
+    background-color: rgb(241, 121, 145);
+  
+}
+.inputValue16{
+    display: grid;
+    
+    grid-template-columns: repeat(4,6rem);
+    grid-template-rows: repeat(4,6rem);
+    grid-gap: 2rem;
+    perspective: 800px;
+}
+.inputValue36{
+    display: grid;
+    
+    grid-template-columns: repeat(6,4rem);
+    grid-template-rows: repeat(6,4rem);
+    grid-gap: 2rem;
+    perspective: 800px;
+}
+.inputValue64{
+    display: grid;
+    
+    grid-template-columns: repeat(8,3rem);
+    grid-template-rows: repeat(8,3rem);
+    grid-gap: 1rem;
+    perspective: 800px;
+}
+.inputValue100{
+    display: grid;
+    
+    grid-template-columns: repeat(10,3rem);
+    grid-template-rows: repeat(10,3rem);
+    grid-gap: 1rem;
+    perspective: 800px;
+}
+/*
+#game-bord{
+    display: grid;
+    grid-template-columns: repeat(4,8rem);
+    grid-template-rows: repeat(4,8rem);
+    grid-template-columns: repeat(8,4rem);
+    grid-template-rows: repeat(8,4rem);
+    grid-gap: 2rem;
+    perspective: 800px;
+}
+*/
+.card{
+    position: relative;
+    transform-style: preserve-3d;
+    /*transform: rotateY(180deg);*/
+    background-color: rgb(246, 253, 253);
+    transition: all 0.6s ease;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+
+}
+.face,
+.back{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+
+}
+
+.back{
+    background: white;
+    backface-visibility: hidden;
+    border-radius: 4px;
+
+}
+.flipCard{
+    transform: rotateY(180deg);
+}
+
+
+#inp-invalid{
+    color: red;
+    font-size: 13px;
+}
+.hidden{
+    display: none;
+}
+#game-won{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    height: 70vh;
+    width: 70%;
+    background-color: azure;
+    border-radius: 4px;
+    text-align: center;
+    
+}
+#game-won p{
+    font-weight: 900;
+    position: relative;
+    top: 10px;
+    font-size: xx-large;    
+}
+#button-div{
+    position: relative;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    float: left;
+}
+#game-won button{
+    border: none;
+    cursor: pointer;
+    padding: 3px;
+    border-radius: 4px;
+    background-color: #b7b6b6;
+}
+#timer-clock{
+    width: 150px;
+    height: 30px;
+    position: relative;
+    left: 50%;
+    transform: translate(-56%);
+    border-radius: 4px;
+    background-color: rgb(252, 238, 238);
+    margin: 10px;
+}
+
+#timer{
+    border-radius: 4px;
+    height: 20px;
+    width: 30px;
+    position: absolute;
+    right: 0%;
+    top: 50%;
+    transform: translate(-30%,-50%);
+    font-weight: bold;
+
+    text-align: center;
+    box-shadow:  0 0 10px rgba(0, 0, 0, 0.2);
+    background-color: rgb(255, 247, 247);
+
+}
+#timer-clock p{
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translate(0,-50%);
+    font-weight: bold;
+}
+
+.game-cotainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.score-bord{
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%);
+    width: 70%;
+}
+.score-bord button{
+    float: left;
+    width: 25%;
+    display: block;
+    border: none;
+    padding: 2px;
+    font-weight: 800;
+    background-color: #ffffff;
+    cursor: pointer;
+}
+.score-bord button:hover{
+    background-color: #b7b6b6;
+}
+.score-bord table{
+    width: 100%;
+    box-shadow:  0 0 10px rgba(0, 0, 0, 0.5);
+
+}
+
+table,td{
+    border: 2px solid;
+}
+.block{
+    overflow: hidden;
+    position: relative;
+    padding: 15px;
+}
+
+@media only screen and (min-width: 1000px){
+    .block{
+        overflow: hidden;
+        position: relative;
+    }
+    .game-cotainer,.score-container{
+        width: 50%;
+        position: relative;
+        padding: 10px;
+        float: left;
+    }
+    .score-container{
+        height: 500px;
+    }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 999px) {
+    .score-container{
+        position: relative;
+        padding: 10px;
+        height: 500px;
+
+    }
+}
+@media only screen and (max-width: 600px){
+    .score-container{
+        position: relative;
+        padding: 10px;
+        height: 500px;
+
+    }
+    .game-cotainer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .inputValue16{
+        display: grid;
+        grid-template-columns: repeat(4,4rem);
+        grid-template-rows: repeat(4,4rem);
+        grid-gap: 2rem;
+        perspective: 800px;
+        
+    }
+    .inputValue36{
+        display: grid;
+        grid-template-columns: repeat(6,3rem);
+        grid-template-rows: repeat(6,3rem);
+        grid-gap: 1rem;
+        perspective: 800px;
+        
+    }
+    .inputValue64{
+        display: grid;
+        grid-template-columns: repeat(8,2rem);
+        grid-template-rows: repeat(8,2rem);
+        grid-gap: 0.6rem;
+        perspective: 800px;
+        
+    }
+    .inputValue100{
+        display: grid;
+        grid-template-columns: repeat(10,1.7rem);
+        grid-template-rows: repeat(10,1.7rem);
+        grid-gap: 0.5rem;
+        perspective: 800px;
+    }
+
+}
+.user-info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#start-game{
+    width: 150px;
+    height: 20px;
+    border: none;
+    font-weight: bold;
+    font-family: 'Roboto Mono', monospace;
+    border-radius: 4px;
+    background-color: rgb(252, 238, 238);
+}
+#username{
+    border: none;
+    padding: 3px;
+    border-radius: 4px;
+}
